@@ -1,0 +1,198 @@
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --very-dark-blue-main-BG: hsl(217, 54%, 11%);
+  --very-dark-blue-card-BG: hsl(216, 50%, 16%);
+  --very-dark-blue-line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+  --transition-duration: 0.1s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+html {
+  font-size: 18px;
+  font-family: "Outfit", sans-serif;
+}
+
+body {
+  background-color: var(--very-dark-blue-main-BG);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 350px;
+  height: auto;
+  padding: 25px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--very-dark-blue-card-BG);
+}
+
+.card > a:first-child {
+  font-size: 0px;
+}
+
+.card p {
+  color: var(--soft-blue);
+}
+
+.cube .cubepic {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  opacity: 1;
+  transition: opacity var(--transition-duration) ease-out;
+}
+
+.cube:hover .cubepic {
+  opacity: 0.3;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding-bottom: 5px;
+  padding-top: 7px;
+}
+
+.info a {
+  color: var(--white);
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin-top: 18px;
+  margin-bottom: 5px;
+  transition: color var(--transition-duration) ease-out;
+}
+
+.info a:hover {
+  color: var(--cyan);
+}
+
+.info h2 {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--cyan);
+  letter-spacing: 1px;
+}
+
+.info p {
+  line-height: 1.4rem;
+}
+
+.info h1 {
+  align-self: baseline;
+}
+
+.amount-date {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 6px;
+  padding-bottom: 15px;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 7px;
+}
+
+.card .date {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.date,
+.artist {
+  font-size: 0.9rem;
+}
+
+.artist {
+  align-self: stretch;
+  border-top: 1px solid var(--very-dark-blue-line);
+  padding-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  padding-bottom: 10px;
+}
+
+.artist img {
+  border-radius: 50%;
+  border: 1px solid white;
+  width: 11%;
+  height: auto;
+}
+
+.artist a {
+  color: var(--white);
+  transition: color var(--transition-duration) ease-out;
+}
+
+.artist a:hover {
+  color: var(--cyan);
+}
+
+.cube {
+  position: relative;
+}
+
+.cube::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  background-color: var(--cyan);
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity var(--transition-duration) ease-out;
+}
+
+.cube:hover::before {
+  opacity: 0.8;
+}
+
+.cube .icon {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.cube:hover .icon {
+  display: block;
+}
